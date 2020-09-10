@@ -38,7 +38,7 @@ public class LeapYear {
 
     private void IsLeap(String input) {
         int num = Integer.parseInt(input);
-        if(num % 4 == 0 && num % 100 != 0 || num % 400 == 0) {
+        if(num % 4 == 0 && (num % 100 != 0 || num % 400 == 0)) {
             System.out.println("閏年");
         }
         else {
