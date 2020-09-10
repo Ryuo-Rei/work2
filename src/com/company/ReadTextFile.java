@@ -17,7 +17,7 @@ public class ReadTextFile {
         System.out.println(fileContentList);
     }
 
-    private List<String> ReadFile(String path) {
+    public static List<String> ReadFile(String path) {
         Path file = Paths.get(path);
         List<String> fileContentList = null;
         try {
