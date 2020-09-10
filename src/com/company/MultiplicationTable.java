@@ -4,35 +4,32 @@ package com.company;
 public class MultiplicationTable {
 
     public void ShowMultiplicationTable() {
-        System.out.println("   1  2  3  *  5  6  7  8  9");
+        System.out.println("   1  2  3  4  5  6  7  8  9");
         for(int i = 1; i <= 9; i++) {
-            // 4の場合、*に変換
-            if(i == 4) {
-                System.out.print("* ");
-            }
-            else {
-                System.out.print(i + " ");
-            }
+            System.out.print(i + " ");
             for(int j = 1; j <= 9; j++) {
-                if(j == 9) {
+                int num = i * j;
+                String strBefore = String.valueOf(num);
+                String strAfter = strBefore;
+                if (strBefore.contains("4")) {
+                    strAfter = strBefore.replace("4", "*");
+                }
+
+                if (j == 9) {
                     // 掛けた結果が一桁の場合、インデント合わせのために空白を追加
-                    if(i * j < 10) {
-                        System.out.println(" " + i * j);
-                    }
-                    else {
-                        System.out.println(i * j);
+                    if (num < 10) {
+                        System.out.println(" " + strAfter);
+                    } else {
+                        System.out.println(strAfter);
                     }
                 }
                 else {
-                    if(i * j == 4) {
-                        System.out.print(" * ");
-                    }
                     // 掛けた結果が一桁の場合、インデント合わせのために空白を追加
-                    else if(i * j < 10) {
-                        System.out.print(" " + i * j + " ");
+                    if(num < 10) {
+                        System.out.print(" " + strAfter + " ");
                     }
                     else {
-                        System.out.print(i * j + " ");
+                        System.out.print(strAfter + " ");
                     }
                 }
             }
