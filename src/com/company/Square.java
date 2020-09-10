@@ -38,14 +38,9 @@ public class Square {
             // 上辺と下辺の場合、辺の差が差分*を出力
             if(i == 0 || i == input - 1) {
                 for(int j = 0; j < input; j++) {
-                    // 辺の最後の場合、改行
-                    if(j == input - 1) {
-                        System.out.println("*");
-                    }
-                    else {
-                        System.out.print("*");
-                    }
+                    System.out.print("*");
                 }
+                System.out.print("\r\n");
             }
             else {
                 System.out.print("*");
