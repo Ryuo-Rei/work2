@@ -41,7 +41,7 @@ public class Factorial {
                 sum = Math.multiplyExact(sum, i);
             }
         }
-        catch (Exception e) {
+        catch (ArithmeticException e) {
             System.out.println("オーバーフローしました。");
             exit(0);
         }
