@@ -2,6 +2,8 @@ package com.company;
 
 import java.util.Scanner;
 
+import static java.lang.System.exit;
+
 // 2020/09/10 14:25 ~ 14:45
 public class Factorial {
     long input = 0;
@@ -34,8 +36,14 @@ public class Factorial {
 
     private long Calculate(long input) {
         long sum = 1;
-        for(long i = 2; i <= input; i++) {
-            sum *= i;
+        try {
+            for (long i = 2; i <= input; i++) {
+                sum = Math.multiplyExact(sum, i);
+            }
+        }
+        catch (Exception e) {
+            System.out.println("オーバーフローしました。");
+            exit(0);
         }
         return sum;
     }
