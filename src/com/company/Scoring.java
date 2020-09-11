@@ -16,7 +16,12 @@ public class Scoring {
         catch(Exception e) {
             e.printStackTrace();
         }
-        Aggregate(fileContentList);
+        if(fileContentList == null) {
+            System.out.println("プログラムの実行に失敗しました。");
+        }
+        else {
+            Aggregate(fileContentList);
+        }
     }
 
     private void Aggregate(List<String> fileContentList) {
