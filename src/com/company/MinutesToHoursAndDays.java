@@ -8,9 +8,23 @@ public class MinutesToHoursAndDays {
     int input = 0;
 
     public void Execute() {
+        boolean hasError = true;
         try {
-            Scanner scan = new Scanner(System.in);
-            input = scan.nextInt();
+            while (true) {
+                if(hasError == false) {
+                    System.out.println("値は0 ~ 99999の整数で入力してください。");
+                }
+
+                Scanner scan = new Scanner(System.in);
+                input = scan.nextInt();
+
+                if(input < 0 || 100000 <= input) {
+                    hasError = false;
+                    continue;
+                }
+
+                break;
+            }
         }
         catch(Exception e) {
             e.getCause();
