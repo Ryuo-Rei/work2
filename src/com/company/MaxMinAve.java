@@ -1,5 +1,6 @@
 package com.company;
 
+import java.io.IOException;
 import java.util.List;
 
 // 2020/09/11 10:00 ~ 10:20
@@ -14,9 +15,15 @@ public class MaxMinAve {
 
         }
         catch(Exception e) {
-            e.printStackTrace();
+
         }
-        Calculate(fileContentList);
+
+        if(fileContentList == null) {
+            System.out.println("プログラムの実行に失敗しました。");
+        }
+        else {
+            Calculate(fileContentList);
+        }
     }
 
     private void Calculate(List<String> fileContentList) {
